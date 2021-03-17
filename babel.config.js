@@ -14,6 +14,7 @@ module.exports = {
           '@services': './src/services',
           '@constants': './src/constants',
           '@utils': './src/utils',
+          '@mocks': './src/mocks',
         },
       },
     ],

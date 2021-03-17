@@ -1,15 +1,28 @@
 import {createStyles} from '@utils/createStyles';
-import React from 'react';
-import {StyleSheet, Text, TextProps} from 'react-native';
+import React, {useMemo} from 'react';
+import {StyleSheet, Text, TextProps, TextStyle} from 'react-native';
 
-interface TypographyProps extends TextProps {}
+interface TypographyProps extends TextProps {
+  children: any;
+  isLight?: boolean;
+  style?: TextStyle;
+}
 
-export function Typography(props: TypographyProps) {
+export function Typography({
+  children,
+  style,
+  isLight = false,
+  ...restProps
+}: TypographyProps) {
   const styles = useStyles();
 
+  // const fontColor = useMemo(() => isLight ?  , [isLight])
+
   return (
-    <Text style={styles.text} {...props}>
-      Teste
+    <Text
+      style={[styles.text, {color: isLight ? '#FFF' : '#000'}, style]}
+      {...restProps}>
+      {children}
     </Text>
   );
 }
@@ -22,6 +35,7 @@ StyleSheet.create({
 
 const useStyles = createStyles(theme => ({
   text: {
-    color: theme.palette.primary,
+    fontFamily: theme.typography.fontFamily.normal,
+    // color: isLight ? '#fff' : '#000',
   },
 }));
