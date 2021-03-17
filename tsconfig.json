@@ -20,7 +20,8 @@
       "@interfaces/*": ["./interfaces/*"],
       "@services/*": ["./services/*"],
       "@constants/*": ["./constants/*"],
-      "@utils/*": ["./utils/*"]
+      "@utils/*": ["./utils/*"],
+      "@mocks/*": ["./mocks/*"]
     }
   },
   "exclude": [

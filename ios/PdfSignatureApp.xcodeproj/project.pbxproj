@@ -8,10 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* PdfSignatureAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PdfSignatureAppTests.m */; };
+		0E3CD5B78A4665EC1E698DDA /* libPods-PdfSignatureApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 997C012B7DA313B78CE75FC4 /* libPods-PdfSignatureApp.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D068303B97704C10917F56DD /* Nexa-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 47DF6142D9424936BDC9705B /* Nexa-Bold.otf */; };
+		E6EE7C90130B4DBFA4703DFE /* Nexa-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7AC7A8835AE14557BF3D3FEB /* Nexa-Regular.otf */; };
+		F3C8AFD664F410F49DC0347C /* libPods-PdfSignatureApp-PdfSignatureAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A86678D834DE3F2C153128 /* libPods-PdfSignatureApp-PdfSignatureAppTests.a */; };
+		DD671A53A3AF4FE3836D4AFE /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0E4FD4187844BBEA54B0A80 /* AntDesign.ttf */; };
+		CE34DB62C3B64E52988C5775 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7F580F1E0ED94A0B9131D36F /* Entypo.ttf */; };
+		CCCBED9F001B4C3C9C8994D7 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F21661FEA1094E9E949690A1 /* EvilIcons.ttf */; };
+		DBA25C081AD044DDAFD946D2 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01E396F709EB40BB9B8813AE /* Feather.ttf */; };
+		F8D5FEF9B9AE416E9E4D9EA9 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 908FE7866D13490D8B345775 /* FontAwesome.ttf */; };
+		98A8722F5CCF43CD9058F9CF /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FDED78F523734C71903BC80F /* FontAwesome5_Brands.ttf */; };
+		7E78F33FDE5148D18B45C1E5 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C305E315CAB4450A844BF424 /* FontAwesome5_Regular.ttf */; };
+		CFDC4B8E5CAC4B5D8AFB6724 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE0559F545EE4E4FA01F230D /* FontAwesome5_Solid.ttf */; };
+		3D1498BCD5154D52B402E865 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 495AABA0845848E2AAF1DD14 /* Fontisto.ttf */; };
+		A19ADA9701B145AA9FE6C2BC /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 25F00CC18C2E447F9765E785 /* Foundation.ttf */; };
+		AF9CA06F72CE4E039D2219A8 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E51682368B2C4811AE563C5B /* Ionicons.ttf */; };
+		28FB8931E0C744FD90BE95B3 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3095D41752404476B65D3777 /* MaterialCommunityIcons.ttf */; };
+		F2B8747DA1A2451CAC067389 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8BE74C5D974D4ED999580428 /* MaterialIcons.ttf */; };
+		CCB93AB935654DE8B6E002D8 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BBCC87F202F42789D18DC6F /* Octicons.ttf */; };
+		5C5AC32796894042A9F1BC83 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB9330812A38435EA71FFA0A /* SimpleLineIcons.ttf */; };
+		49FD87F8F4D34EA3AC6B7EC7 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6662750FE9C64A48811BBAA1 /* Zocial.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,8 +54,32 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = PdfSignatureApp/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PdfSignatureApp/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PdfSignatureApp/main.m; sourceTree = "<group>"; };
+		291BD34BBBBADD34E4A4043B /* Pods-PdfSignatureApp-PdfSignatureAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfSignatureApp-PdfSignatureAppTests.debug.xcconfig"; path = "Target Support Files/Pods-PdfSignatureApp-PdfSignatureAppTests/Pods-PdfSignatureApp-PdfSignatureAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		47DF6142D9424936BDC9705B /* Nexa-Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nexa-Bold.otf"; path = "../assets/fonts/Nexa-Bold.otf"; sourceTree = "<group>"; };
+		5D5B09EF009CA1D622FD209B /* Pods-PdfSignatureApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfSignatureApp.release.xcconfig"; path = "Target Support Files/Pods-PdfSignatureApp/Pods-PdfSignatureApp.release.xcconfig"; sourceTree = "<group>"; };
+		7AC7A8835AE14557BF3D3FEB /* Nexa-Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Nexa-Regular.otf"; path = "../assets/fonts/Nexa-Regular.otf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = PdfSignatureApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		997C012B7DA313B78CE75FC4 /* libPods-PdfSignatureApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PdfSignatureApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9A86678D834DE3F2C153128 /* libPods-PdfSignatureApp-PdfSignatureAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PdfSignatureApp-PdfSignatureAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F4AA2CEED93F0BEE3A6634 /* Pods-PdfSignatureApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfSignatureApp.debug.xcconfig"; path = "Target Support Files/Pods-PdfSignatureApp/Pods-PdfSignatureApp.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F3B808386530440B76E37F5B /* Pods-PdfSignatureApp-PdfSignatureAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PdfSignatureApp-PdfSignatureAppTests.release.xcconfig"; path = "Target Support Files/Pods-PdfSignatureApp-PdfSignatureAppTests/Pods-PdfSignatureApp-PdfSignatureAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		A0E4FD4187844BBEA54B0A80 /* AntDesign.ttf */ = {isa = PBXFileReference; name = "AntDesign.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7F580F1E0ED94A0B9131D36F /* Entypo.ttf */ = {isa = PBXFileReference; name = "Entypo.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F21661FEA1094E9E949690A1 /* EvilIcons.ttf */ = {isa = PBXFileReference; name = "EvilIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		01E396F709EB40BB9B8813AE /* Feather.ttf */ = {isa = PBXFileReference; name = "Feather.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		908FE7866D13490D8B345775 /* FontAwesome.ttf */ = {isa = PBXFileReference; name = "FontAwesome.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		FDED78F523734C71903BC80F /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Brands.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C305E315CAB4450A844BF424 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Regular.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DE0559F545EE4E4FA01F230D /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; name = "FontAwesome5_Solid.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		495AABA0845848E2AAF1DD14 /* Fontisto.ttf */ = {isa = PBXFileReference; name = "Fontisto.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		25F00CC18C2E447F9765E785 /* Foundation.ttf */ = {isa = PBXFileReference; name = "Foundation.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E51682368B2C4811AE563C5B /* Ionicons.ttf */ = {isa = PBXFileReference; name = "Ionicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3095D41752404476B65D3777 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; name = "MaterialCommunityIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8BE74C5D974D4ED999580428 /* MaterialIcons.ttf */ = {isa = PBXFileReference; name = "MaterialIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2BBCC87F202F42789D18DC6F /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EB9330812A38435EA71FFA0A /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6662750FE9C64A48811BBAA1 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3C8AFD664F410F49DC0347C /* libPods-PdfSignatureApp-PdfSignatureAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E3CD5B78A4665EC1E698DDA /* libPods-PdfSignatureApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +136,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				997C012B7DA313B78CE75FC4 /* libPods-PdfSignatureApp.a */,
+				A9A86678D834DE3F2C153128 /* libPods-PdfSignatureApp-PdfSignatureAppTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -109,6 +157,8 @@
 				00E356EF1AD99517003FC87E /* PdfSignatureAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				995879D824214F0F89268B32 /* Resources */,
+				9F5EB046F57B578B212F14B0 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -124,6 +174,44 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		995879D824214F0F89268B32 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				47DF6142D9424936BDC9705B /* Nexa-Bold.otf */,
+				7AC7A8835AE14557BF3D3FEB /* Nexa-Regular.otf */,
+				A0E4FD4187844BBEA54B0A80 /* AntDesign.ttf */,
+				7F580F1E0ED94A0B9131D36F /* Entypo.ttf */,
+				F21661FEA1094E9E949690A1 /* EvilIcons.ttf */,
+				01E396F709EB40BB9B8813AE /* Feather.ttf */,
+				908FE7866D13490D8B345775 /* FontAwesome.ttf */,
+				FDED78F523734C71903BC80F /* FontAwesome5_Brands.ttf */,
+				C305E315CAB4450A844BF424 /* FontAwesome5_Regular.ttf */,
+				DE0559F545EE4E4FA01F230D /* FontAwesome5_Solid.ttf */,
+				495AABA0845848E2AAF1DD14 /* Fontisto.ttf */,
+				25F00CC18C2E447F9765E785 /* Foundation.ttf */,
+				E51682368B2C4811AE563C5B /* Ionicons.ttf */,
+				3095D41752404476B65D3777 /* MaterialCommunityIcons.ttf */,
+				8BE74C5D974D4ED999580428 /* MaterialIcons.ttf */,
+				2BBCC87F202F42789D18DC6F /* Octicons.ttf */,
+				EB9330812A38435EA71FFA0A /* SimpleLineIcons.ttf */,
+				6662750FE9C64A48811BBAA1 /* Zocial.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
+		9F5EB046F57B578B212F14B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D4F4AA2CEED93F0BEE3A6634 /* Pods-PdfSignatureApp.debug.xcconfig */,
+				5D5B09EF009CA1D622FD209B /* Pods-PdfSignatureApp.release.xcconfig */,
+				291BD34BBBBADD34E4A4043B /* Pods-PdfSignatureApp-PdfSignatureAppTests.debug.xcconfig */,
+				F3B808386530440B76E37F5B /* Pods-PdfSignatureApp-PdfSignatureAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +219,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PdfSignatureAppTests" */;
 			buildPhases = (
+				CA3DE02652C6BF5CF20D4567 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
+				851FD2F1BC9E976CBCE20546 /* [CP] Embed Pods Frameworks */,
+				BF8E78352F154CAA11E2B19D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,11 +240,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "PdfSignatureApp" */;
 			buildPhases = (
+				953C91F950A15778705F4F78 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				BD249CC5B9EBCB140F6F9D93 /* [CP] Embed Pods Frameworks */,
+				3DDA2DE849E844356492F3ED /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -214,6 +308,24 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D068303B97704C10917F56DD /* Nexa-Bold.otf in Resources */,
+				E6EE7C90130B4DBFA4703DFE /* Nexa-Regular.otf in Resources */,
+				DD671A53A3AF4FE3836D4AFE /* AntDesign.ttf in Resources */,
+				CE34DB62C3B64E52988C5775 /* Entypo.ttf in Resources */,
+				CCCBED9F001B4C3C9C8994D7 /* EvilIcons.ttf in Resources */,
+				DBA25C081AD044DDAFD946D2 /* Feather.ttf in Resources */,
+				F8D5FEF9B9AE416E9E4D9EA9 /* FontAwesome.ttf in Resources */,
+				98A8722F5CCF43CD9058F9CF /* FontAwesome5_Brands.ttf in Resources */,
+				7E78F33FDE5148D18B45C1E5 /* FontAwesome5_Regular.ttf in Resources */,
+				CFDC4B8E5CAC4B5D8AFB6724 /* FontAwesome5_Solid.ttf in Resources */,
+				3D1498BCD5154D52B402E865 /* Fontisto.ttf in Resources */,
+				A19ADA9701B145AA9FE6C2BC /* Foundation.ttf in Resources */,
+				AF9CA06F72CE4E039D2219A8 /* Ionicons.ttf in Resources */,
+				28FB8931E0C744FD90BE95B3 /* MaterialCommunityIcons.ttf in Resources */,
+				F2B8747DA1A2451CAC067389 /* MaterialIcons.ttf in Resources */,
+				CCB93AB935654DE8B6E002D8 /* Octicons.ttf in Resources */,
+				5C5AC32796894042A9F1BC83 /* SimpleLineIcons.ttf in Resources */,
+				49FD87F8F4D34EA3AC6B7EC7 /* Zocial.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +345,118 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		3DDA2DE849E844356492F3ED /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp/Pods-PdfSignatureApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp/Pods-PdfSignatureApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp/Pods-PdfSignatureApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		851FD2F1BC9E976CBCE20546 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp-PdfSignatureAppTests/Pods-PdfSignatureApp-PdfSignatureAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp-PdfSignatureAppTests/Pods-PdfSignatureApp-PdfSignatureAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp-PdfSignatureAppTests/Pods-PdfSignatureApp-PdfSignatureAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		953C91F950A15778705F4F78 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PdfSignatureApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD249CC5B9EBCB140F6F9D93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp/Pods-PdfSignatureApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp/Pods-PdfSignatureApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp/Pods-PdfSignatureApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BF8E78352F154CAA11E2B19D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp-PdfSignatureAppTests/Pods-PdfSignatureApp-PdfSignatureAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp-PdfSignatureAppTests/Pods-PdfSignatureApp-PdfSignatureAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PdfSignatureApp-PdfSignatureAppTests/Pods-PdfSignatureApp-PdfSignatureAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA3DE02652C6BF5CF20D4567 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PdfSignatureApp-PdfSignatureAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -286,6 +510,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 291BD34BBBBADD34E4A4043B /* Pods-PdfSignatureApp-PdfSignatureAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -312,6 +537,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3B808386530440B76E37F5B /* Pods-PdfSignatureApp-PdfSignatureAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -335,6 +561,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4F4AA2CEED93F0BEE3A6634 /* Pods-PdfSignatureApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -360,6 +587,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D5B09EF009CA1D622FD209B /* Pods-PdfSignatureApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -414,6 +642,7 @@
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -478,6 +707,7 @@
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "arm64 ";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

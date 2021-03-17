@@ -1,6 +1,12 @@
+export type IColor = {
+  light: string;
+  main: string;
+  dark: string;
+};
+
 export type IThemePalette = {
-  primary: string;
-  secondary: string;
+  primary: IColor;
+  secondary: IColor;
 };
 
 export type IFontFamily = {
