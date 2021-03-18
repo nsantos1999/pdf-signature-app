@@ -3,12 +3,17 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {Home} from '@screens/Home';
 import {SignPdfProvider} from '@contexts/SignPdfContext';
 import {DocumentPreview} from '@screens/DocumentPreview';
+import {StatusBar} from 'react-native';
+import {useTheme} from '@contexts/ThemeContext';
 
 const Stack = createStackNavigator();
 
 export function MainStack() {
+  const {theme} = useTheme();
+
   return (
     <SignPdfProvider>
+      <StatusBar backgroundColor={theme.palette.primary.dark} />
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
