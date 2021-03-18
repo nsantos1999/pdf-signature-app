@@ -14,7 +14,10 @@ import {useColorScheme} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {ThemeProvider} from '@contexts/ThemeContext';
-import {Home} from '@screens/Home';
+import {MainStack} from '@navigations/stack/MainStack';
+import {NavigationContainer} from '@react-navigation/native';
+import Toast from 'react-native-toast-message';
+import {defaultTheme} from '@constants/DefaultTheme';
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -26,8 +29,11 @@ const App: () => Node = () => {
   console.log(backgroundStyle);
 
   return (
-    <ThemeProvider>
-      <Home />
+    <ThemeProvider defaultTheme={defaultTheme}>
+      <NavigationContainer>
+        <MainStack />
+        <Toast ref={ref => Toast.setRef(ref)} />
+      </NavigationContainer>
     </ThemeProvider>
   );
 };

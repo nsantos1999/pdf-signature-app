@@ -25,7 +25,7 @@ export function SignedPdfItemContent({
   );
 }
 
-const useStyles = createStyles(theme => ({
+const {useStyles} = createStyles(theme => ({
   container: {
     flex: 1,
     justifyContent: 'space-around',

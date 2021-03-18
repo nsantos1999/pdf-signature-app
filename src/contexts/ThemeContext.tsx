@@ -1,9 +1,9 @@
-import {defaultTheme} from '@constants/DefaultTheme';
 import {ITheme} from '@interfaces/ITheme';
 import React, {createContext, useContext, useState} from 'react';
 
 type ThemeProviderProps = {
   children: React.ReactNode;
+  defaultTheme: ITheme;
 };
 
 type IThemeContext = {
@@ -13,7 +13,7 @@ type IThemeContext = {
 
 const ThemeContext = createContext<IThemeContext>({} as IThemeContext);
 
-function ThemeProvider({children}: ThemeProviderProps) {
+function ThemeProvider({children, defaultTheme}: ThemeProviderProps) {
   const [theme, setTheme] = useState<ITheme>(defaultTheme);
 
   return (

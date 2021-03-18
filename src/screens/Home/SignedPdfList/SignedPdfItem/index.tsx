@@ -37,7 +37,7 @@ export function SignedPdfItem({pdfSigned}: SignedPdfItemProps) {
   );
 }
 
-const useStyles = createStyles(theme => ({
+const {useStyles} = createStyles(theme => ({
   container: {
     flex: 1,
     margin: 5,

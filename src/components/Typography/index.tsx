@@ -1,5 +1,5 @@
 import {createStyles} from '@utils/createStyles';
-import React, {useMemo} from 'react';
+import React from 'react';
 import {StyleSheet, Text, TextProps, TextStyle} from 'react-native';
 
 interface TypographyProps extends TextProps {
@@ -33,7 +33,7 @@ StyleSheet.create({
   },
 });
 
-const useStyles = createStyles(theme => ({
+const {useStyles} = createStyles(theme => ({
   text: {
     fontFamily: theme.typography.fontFamily.normal,
     // color: isLight ? '#fff' : '#000',

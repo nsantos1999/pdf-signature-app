@@ -15,6 +15,8 @@ module.exports = {
           '@constants': './src/constants',
           '@utils': './src/utils',
           '@mocks': './src/mocks',
+          '@styles': './src/styles',
+          '@navigations': './src/navigations',
         },
       },
     ],

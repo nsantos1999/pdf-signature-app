@@ -1,7 +1,7 @@
-import {Typography} from '@components/Typography';
 import {createStyles} from '@utils/createStyles';
 import React from 'react';
-import {Text, View, SafeAreaView} from 'react-native';
+import {SafeAreaView} from 'react-native';
+import {HomeFooter} from './Footer/intex';
 import {SignedPdfList} from './SignedPdfList';
 
 export function Home() {
@@ -9,14 +9,13 @@ export function Home() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
-        <SignedPdfList />
-      </View>
+      <SignedPdfList />
+      <HomeFooter />
     </SafeAreaView>
   );
 }
 
-const useStyles = createStyles(theme => ({
+const {useStyles} = createStyles(theme => ({
   container: {
     flex: 1,
     backgroundColor: theme.palette.primary.main,

@@ -9,14 +9,14 @@ export function SignedPdfList() {
 
   return (
     <ScrollView style={styles.container}>
-      {signedPdfMock.map(signedPdf => (
-        <SignedPdfItem pdfSigned={signedPdf} />
+      {signedPdfMock.map((signedPdf, index) => (
+        <SignedPdfItem pdfSigned={signedPdf} key={index} />
       ))}
     </ScrollView>
   );
 }
 
-const useStyles = createStyles(theme => ({
+const {useStyles} = createStyles(() => ({
   container: {
     flex: 1,
     padding: 5,

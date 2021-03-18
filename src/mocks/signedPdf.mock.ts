@@ -1,4 +1,4 @@
-import {PdfSigned} from '../interfaces/PdfSigned';
+import {PdfSigned} from '../interfaces/Pdf';
 
 export const signedPdfMock: PdfSigned[] = [
   {

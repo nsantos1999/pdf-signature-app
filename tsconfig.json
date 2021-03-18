@@ -21,7 +21,9 @@
       "@services/*": ["./services/*"],
       "@constants/*": ["./constants/*"],
       "@utils/*": ["./utils/*"],
-      "@mocks/*": ["./mocks/*"]
+      "@mocks/*": ["./mocks/*"],
+      "@styles/*": ["./styles/*"],
+      "@navigations/*": ["./navigations/*"]
     }
   },
   "exclude": [
