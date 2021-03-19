@@ -15,7 +15,7 @@ export type SignatureCanvasProps = {
 
 export function SignatureCanvas({onSave}: SignatureCanvasProps) {
   const styles = useStyles();
-  const signatureRef = useRef();
+  const signatureRef = useRef<any>();
   const [saveExtStorageIsGranted, setSaveExtStorageIsGranted] = useState(
     Platform.OS === 'ios',
   );
@@ -24,6 +24,8 @@ export function SignatureCanvas({onSave}: SignatureCanvasProps) {
   const navigation = useNavigation();
 
   useEffect(() => {
+    Orientation.lockToLandscape();
+
     return () => Orientation.lockToPortrait();
   }, []);
 
@@ -31,10 +33,6 @@ export function SignatureCanvas({onSave}: SignatureCanvasProps) {
     if (Platform.OS === 'android') {
       PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-        {
-          title: 'Permissão',
-          message: 'Precisamos de sua permissão para salvar sua assinatura',
-        },
       )
         .then(granted => {
           if (granted === PermissionsAndroid.RESULTS.GRANTED) {
@@ -49,10 +47,11 @@ export function SignatureCanvas({onSave}: SignatureCanvasProps) {
           }
         })
         .catch(err => {
+          console.error(err);
           navigation.goBack();
         });
     }
-  }, []);
+  }, [navigation]);
 
   const finishSignature = useCallback(() => {
     console.log('Signature', 'Prepare to save...');
@@ -87,8 +86,12 @@ export function SignatureCanvas({onSave}: SignatureCanvasProps) {
         viewMode={'landscape'}
       />
       <View style={styles.buttonGroups}>
-        <Button inverse>Limpar</Button>
-        <Button disabled={!isDragged || !saveExtStorageIsGranted}>
+        <Button inverse onPress={resetSignature}>
+          Limpar
+        </Button>
+        <Button
+          disabled={!isDragged || !saveExtStorageIsGranted}
+          onPress={finishSignature}>
           Salvar
         </Button>
       </View>
@@ -99,11 +102,12 @@ export function SignatureCanvas({onSave}: SignatureCanvasProps) {
 const {useStyles} = createStyles({
   container: {
     flex: 1,
+    backgroundColor: '#fff',
   },
   signature: {
     flex: 1,
-    borderColor: '#000033',
-    borderWidth: 1,
+    borderColor: 'red',
+    borderWidth: 5,
   },
 
   buttonGroups: {
