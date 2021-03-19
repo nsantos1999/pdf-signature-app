@@ -18,8 +18,10 @@ export function DocumentPreview() {
         x,
         y,
       });
+
+      navigation.navigate('SignDocument');
     },
-    [setSignatureLocation],
+    [setSignatureLocation, navigation],
   );
 
   useEffect(() => {

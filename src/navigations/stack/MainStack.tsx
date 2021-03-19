@@ -5,6 +5,7 @@ import {SignPdfProvider} from '@contexts/SignPdfContext';
 import {DocumentPreview} from '@screens/DocumentPreview';
 import {StatusBar} from 'react-native';
 import {useTheme} from '@contexts/ThemeContext';
+import {SignDocument} from '@screens/SignDocument';
 
 const Stack = createStackNavigator();
 
@@ -21,6 +22,7 @@ export function MainStack() {
         }}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="DocumentPreview" component={DocumentPreview} />
+        <Stack.Screen name="SignDocument" component={SignDocument} />
       </Stack.Navigator>
     </SignPdfProvider>
   );
