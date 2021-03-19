@@ -2,21 +2,22 @@ import {useTheme} from '@contexts/ThemeContext';
 import {ITheme} from '@interfaces/ITheme';
 import {StyleSheet} from 'react-native';
 
-type CreateStylesParam<T> =
-  | ((theme: ITheme) => T | StyleSheet.NamedStyles<T>)
-  | StyleSheet.NamedStyles<T>;
+type NamedStylesType = StyleSheet.NamedStyles<StyleSheet.NamedStyles<any>>;
 
-export function createStyles<
-  T extends StyleSheet.NamedStyles<T> | StyleSheet.NamedStyles<any>
->(param: CreateStylesParam<T>) {
-  const useStyles = () => {
+type CreateStylesParam<T> =
+  | ((theme: ITheme, params: T) => NamedStylesType)
+  | NamedStylesType;
+
+export function createStyles<T>(param: CreateStylesParam<T>) {
+  function useStyles(useStyleProps: T = {} as T) {
     const {theme} = useTheme();
 
-    const result = typeof param === 'function' ? param(theme) : param;
+    const result =
+      typeof param === 'function' ? param(theme, useStyleProps) : param;
 
     const styles = StyleSheet.create(result);
 
     return styles;
-  };
+  }
   return {useStyles};
 }
