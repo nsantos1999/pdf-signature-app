@@ -3,10 +3,11 @@ import {useGlobalStyles} from '@styles/useGlobalStyles';
 import {createStyles} from '@utils/createStyles';
 import React from 'react';
 import {TouchableOpacity, TouchableOpacityProps} from 'react-native';
+import {IColor, IThemePalette} from '../../interfaces/ITheme';
 
 type OptionsStyle = {
-  pallete: 'primary' | 'secondary';
-  color: 'light' | 'main' | 'dark';
+  pallete: keyof IThemePalette;
+  color: keyof IColor;
   inverse: boolean;
 };
 
