@@ -18,4 +18,15 @@ const {useStyles} = createStyles(() => ({
 
     elevation: 3,
   },
+  shadow10: {
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 25,
+    },
+    shadowOpacity: 0.58,
+    shadowRadius: 16.0,
+
+    elevation: 24,
+  },
 }));

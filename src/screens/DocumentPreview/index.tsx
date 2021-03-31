@@ -1,28 +1,29 @@
-import React, {useCallback, useEffect} from 'react';
-import {SafeAreaView} from 'react-native';
+import React, {useEffect} from 'react';
+import {SafeAreaView, View} from 'react-native';
 import {PdfViewer} from '@components/PdfViewer';
 import {useSignPdf} from '@contexts/SignPdfContext';
 import {useNavigation} from '@react-navigation/core';
 import {createStyles} from '@utils/createStyles';
+import {FooterButton} from '@components/FooterButton';
 
 export function DocumentPreview() {
   const styles = useStyles();
-  const {pdf, setSignatureLocation} = useSignPdf();
+  const {pdf} = useSignPdf();
 
   const navigation = useNavigation();
 
-  const onPageSigleTab = useCallback(
-    (page: number, x: number, y: number) => {
-      setSignatureLocation({
-        page,
-        x,
-        y,
-      });
+  // const onPageSigleTab = useCallback(
+  //   (page: number, x: number, y: number) => {
+  //     setSignatureLocation({
+  //       page,
+  //       x,
+  //       y,
+  //     });
 
-      navigation.navigate('SignDocument');
-    },
-    [setSignatureLocation, navigation],
-  );
+  //     navigation.navigate('SignDocument');
+  //   },
+  //   [setSignatureLocation, navigation],
+  // );
 
   useEffect(() => {
     if (!pdf) {
@@ -32,13 +33,21 @@ export function DocumentPreview() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PdfViewer pdfUri={pdf?.uri} onPageSigleTab={onPageSigleTab} />
+      <View style={styles.content}>
+        <PdfViewer pdfUri={pdf?.uri} />
+      </View>
+      <FooterButton onPress={() => navigation.navigate('SignDocument')}>
+        Assinar
+      </FooterButton>
     </SafeAreaView>
   );
 }
 
 const {useStyles} = createStyles({
   container: {
+    flex: 1,
+  },
+  content: {
     flex: 1,
   },
 });

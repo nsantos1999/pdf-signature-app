@@ -5,7 +5,7 @@ import React from 'react';
 import {TouchableOpacity, TouchableOpacityProps} from 'react-native';
 import {IColor, IThemePalette} from '../../interfaces/ITheme';
 
-type OptionsStyle = {
+export type ButtonOptionsStyle = {
   pallete: keyof IThemePalette;
   color: keyof IColor;
   inverse: boolean;
@@ -13,7 +13,7 @@ type OptionsStyle = {
 
 export interface CustomButtonProps
   extends TouchableOpacityProps,
-    Partial<OptionsStyle> {
+    Partial<ButtonOptionsStyle> {
   children: React.ReactNode;
 }
 
@@ -42,7 +42,7 @@ export function Button({
   );
 }
 
-const {useStyles} = createStyles<OptionsStyle>(
+const {useStyles} = createStyles<ButtonOptionsStyle, any>(
   (theme, {color, pallete, inverse}) => ({
     button: {
       borderRadius: 5,
@@ -53,7 +53,7 @@ const {useStyles} = createStyles<OptionsStyle>(
       paddingHorizontal: 50,
       justifyContent: 'center',
       alignItems: 'center',
-      height: 80,
+      height: 45,
     },
   }),
 );

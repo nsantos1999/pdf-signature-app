@@ -39,7 +39,7 @@ StyleSheet.create({
   },
 });
 
-const {useStyles} = createStyles<OptionsStyle>(
+const {useStyles} = createStyles<OptionsStyle, any>(
   (theme, {isLight, color, bold}) => ({
     text: {
       fontFamily: bold

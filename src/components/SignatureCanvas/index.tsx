@@ -1,5 +1,5 @@
 import {Button} from '@components/Button';
-import {useNavigation} from '@react-navigation/core';
+import {useFocusEffect, useNavigation} from '@react-navigation/core';
 import {createStyles} from '@utils/createStyles';
 import {ToastUtil} from '@utils/ToastUtil';
 import React, {useCallback, useEffect, useRef, useState} from 'react';
@@ -23,11 +23,13 @@ export function SignatureCanvas({onSave}: SignatureCanvasProps) {
 
   const navigation = useNavigation();
 
-  useEffect(() => {
-    Orientation.lockToLandscape();
+  useFocusEffect(
+    React.useCallback(() => {
+      Orientation.lockToLandscape();
 
-    return () => Orientation.lockToPortrait();
-  }, []);
+      return () => Orientation.lockToPortrait();
+    }, []),
+  );
 
   useEffect(() => {
     if (Platform.OS === 'android') {
