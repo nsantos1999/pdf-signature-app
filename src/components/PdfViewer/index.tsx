@@ -1,15 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {createStyles} from '@utils/createStyles';
 import {Dimensions, View} from 'react-native';
 import Pdf from 'react-native-pdf';
 
 export type PdfViewerParams = {
   pdfUri: string | undefined;
-  onPageSigleTab?: (page: number, x: number, y: number) => void;
+  onPageSigleTab?: (
+    pageNumber: number,
+    pageWidth: number,
+    pageHeight: number,
+    x: number,
+    y: number,
+  ) => void;
+};
+
+type IPageSize = {
+  width: number;
+  height: number;
 };
 
 export function PdfViewer({pdfUri, onPageSigleTab}: PdfViewerParams) {
   const styles = useStyles();
+  const [pageSize, setPageSize] = useState<IPageSize>({
+    height: 0,
+    width: 0,
+  } as IPageSize);
 
   return (
     <View style={styles.container}>
@@ -18,7 +33,13 @@ export function PdfViewer({pdfUri, onPageSigleTab}: PdfViewerParams) {
         onError={error => {
           console.log(error);
         }}
-        onPageSingleTap={onPageSigleTab}
+        onLoadComplete={(numberOfPages: number, path: string, size) =>
+          setPageSize(size)
+        }
+        onPageSingleTap={(page, x, y) =>
+          onPageSigleTab &&
+          onPageSigleTab(page, pageSize.width, pageSize.height, x, y)
+        }
         style={styles.pdf}
       />
     </View>

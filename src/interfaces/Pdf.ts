@@ -12,7 +12,9 @@ export type PdfLocalFile = {
 };
 
 export type SignatureLocation = {
-  page: number;
+  pageNumber: number;
+  pageWidth: number;
+  pageHeight: number;
   x: number;
   y: number;
 };

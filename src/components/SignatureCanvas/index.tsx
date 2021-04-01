@@ -83,8 +83,8 @@ export function SignatureCanvas({onSave}: SignatureCanvasProps) {
         showTitleLabel={false}
         backgroundColor="transparent"
         // strokeColor="#000"
-        minStrokeWidth={4}
-        maxStrokeWidth={4}
+        minStrokeWidth={7}
+        maxStrokeWidth={7}
         viewMode={'landscape'}
       />
       <View style={styles.buttonGroups}>

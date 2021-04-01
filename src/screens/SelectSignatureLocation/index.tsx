@@ -4,24 +4,33 @@ import {PdfViewer} from '@components/PdfViewer';
 import {useSignPdf} from '@contexts/SignPdfContext';
 import {useNavigation} from '@react-navigation/core';
 import {createStyles} from '@utils/createStyles';
+import {SelectSignatureLocationHeader} from './Header';
 
-export function DocumentPreview() {
+export function SelectSignatureLocation() {
   const styles = useStyles();
-  const {pdf, setSignatureLocation} = useSignPdf();
+  const {pdf, signPdf, pdfSignedUrl} = useSignPdf();
 
   const navigation = useNavigation();
 
   const onPageSigleTab = useCallback(
-    (page: number, x: number, y: number) => {
-      setSignatureLocation({
-        page,
+    (
+      pageNumber: number,
+      pageWidth: number,
+      pageHeight: number,
+      x: number,
+      y: number,
+    ) => {
+      signPdf({
+        pageNumber,
+        pageWidth,
+        pageHeight,
         x,
         y,
       });
 
-      navigation.navigate('SignDocument');
+      // navigation.navigate('SignDocument');
     },
-    [setSignatureLocation, navigation],
+    [signPdf],
   );
 
   useEffect(() => {
@@ -32,7 +41,11 @@ export function DocumentPreview() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <PdfViewer pdfUri={pdf?.uri} onPageSigleTab={onPageSigleTab} />
+      <SelectSignatureLocationHeader />
+      <PdfViewer
+        pdfUri={pdfSignedUrl ? pdfSignedUrl : pdf?.uri}
+        onPageSigleTab={onPageSigleTab}
+      />
     </SafeAreaView>
   );
 }
