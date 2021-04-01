@@ -6,14 +6,13 @@ type NamedStylesType<T> =
   | StyleSheet.NamedStyles<T>
   | StyleSheet.NamedStyles<any>;
 
-type CreateStylesParam<T, K> =
+type IStyleProps<T, K> =
   | ((theme: ITheme, params: T) => NamedStylesType<K>)
   | NamedStylesType<K>;
 
-export function createStyles<
-  T,
-  K extends StyleSheet.NamedStyles<K> | StyleSheet.NamedStyles<any>
->(styleProp: CreateStylesParam<T, K>) {
+export function createStyles<T, K extends NamedStylesType<K>>(
+  styleProp: IStyleProps<T, K>,
+) {
   function useStyles(useStyleProps: T = {} as T) {
     const {theme} = useTheme();
 

@@ -2,13 +2,17 @@ import {Typography} from '@components/Typography';
 import {useGlobalStyles} from '@styles/useGlobalStyles';
 import {createStyles} from '@utils/createStyles';
 import React from 'react';
-import {TouchableOpacity, TouchableOpacityProps} from 'react-native';
+import {TouchableOpacity, TouchableOpacityProps, ViewStyle} from 'react-native';
 import {IColor, IThemePalette} from '../../interfaces/ITheme';
 
 export type ButtonOptionsStyle = {
   pallete: keyof IThemePalette;
   color: keyof IColor;
   inverse: boolean;
+};
+
+type StyleParams = {
+  button: ViewStyle;
 };
 
 export interface CustomButtonProps
@@ -42,7 +46,7 @@ export function Button({
   );
 }
 
-const {useStyles} = createStyles<ButtonOptionsStyle, any>(
+const {useStyles} = createStyles<ButtonOptionsStyle, StyleParams>(
   (theme, {color, pallete, inverse}) => ({
     button: {
       borderRadius: 5,

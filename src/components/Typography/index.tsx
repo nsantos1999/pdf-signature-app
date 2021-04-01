@@ -2,6 +2,10 @@ import {createStyles} from '@utils/createStyles';
 import React from 'react';
 import {StyleSheet, Text, TextProps, TextStyle} from 'react-native';
 
+type StyleProps = {
+  text: TextStyle;
+};
+
 type OptionsStyle = {
   isLight: boolean;
   color?: string;
@@ -39,7 +43,7 @@ StyleSheet.create({
   },
 });
 
-const {useStyles} = createStyles<OptionsStyle, any>(
+const {useStyles} = createStyles<OptionsStyle, StyleProps>(
   (theme, {isLight, color, bold}) => ({
     text: {
       fontFamily: bold
