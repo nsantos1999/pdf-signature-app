@@ -6,7 +6,7 @@ import {useSignedPdfList} from '@contexts/SignedPdfListContext';
 
 export function SignedPdfList() {
   const styles = useStyles();
-  const {signedPdfs} = useSignedPdfList();
+  const {signedPdfs, isLoading, handleLoadSignedPdfs} = useSignedPdfList();
 
   return (
     // <ScrollView style={styles.container}>
@@ -15,6 +15,8 @@ export function SignedPdfList() {
       data={signedPdfs}
       keyExtractor={item => item.id}
       renderItem={({item}) => <SignedPdfItem signedPdf={item} key={item.id} />}
+      refreshing={isLoading}
+      onRefresh={handleLoadSignedPdfs}
     />
     //   {signedPdfMock.map((signedPdf, index) => (
     //     <SignedPdfItem pdfSigned={signedPdf} key={index} />

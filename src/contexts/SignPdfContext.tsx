@@ -26,10 +26,10 @@ type ISignPdfContext = {
 
   setPdf: (pdf: PdfLocalFile) => void;
   // setSignatureLocation: (signatureLocation: SignatureLocation) => void;
-  signPdf: (signatureLocation: SignatureLocation) => void;
+  signPdf: (signatureLocation: SignatureLocation) => Promise<void>;
   setSignature: (signature: Signature) => void;
   handleResetPdfSigned: () => void;
-  handleConfirmSignature: () => void;
+  handleConfirmSignature: () => Promise<void>;
 };
 
 const SignPdfContext = createContext<ISignPdfContext>({} as ISignPdfContext);

@@ -10,6 +10,7 @@ type OptionsStyle = {
   isLight: boolean;
   color?: string;
   bold: boolean;
+  size: number;
 };
 
 interface TypographyProps extends TextProps, Partial<OptionsStyle> {
@@ -24,9 +25,10 @@ export function Typography({
   isLight = false,
   color,
   bold = false,
+  size = 14,
   ...restProps
 }: TypographyProps) {
-  const styles = useStyles({isLight, color, bold});
+  const styles = useStyles({isLight, color, bold, size});
 
   // const fontColor = useMemo(() => isLight ?  , [isLight])
 
@@ -44,12 +46,13 @@ StyleSheet.create({
 });
 
 const {useStyles} = createStyles<OptionsStyle, StyleProps>(
-  (theme, {isLight, color, bold}) => ({
+  (theme, {isLight, color, bold, size}) => ({
     text: {
       fontFamily: bold
         ? theme.typography.fontFamily.bold
         : theme.typography.fontFamily.normal,
       color: color ? color : isLight ? '#fff' : theme.palette.primary.dark,
+      fontSize: size,
     },
   }),
 );

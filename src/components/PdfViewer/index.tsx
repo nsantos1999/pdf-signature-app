@@ -1,9 +1,19 @@
 import React, {useState} from 'react';
 import {createStyles} from '@utils/createStyles';
-import {Dimensions, View} from 'react-native';
+import {Dimensions, View, ViewStyle} from 'react-native';
 import Pdf from 'react-native-pdf';
 
-export type PdfViewerParams = {
+type StyleOptions = {
+  pdfWidth: number;
+  pdfHeight: number;
+};
+
+type ICreateStyle = {
+  container: ViewStyle;
+  pdf: ViewStyle;
+};
+
+export interface PdfViewerParams extends Partial<StyleOptions> {
   pdfUri: string | undefined;
   onPageSigleTab?: (
     pageNumber: number,
@@ -12,15 +22,22 @@ export type PdfViewerParams = {
     x: number,
     y: number,
   ) => void;
-};
+  page?: number;
+}
 
 type IPageSize = {
   width: number;
   height: number;
 };
 
-export function PdfViewer({pdfUri, onPageSigleTab}: PdfViewerParams) {
-  const styles = useStyles();
+export function PdfViewer({
+  pdfUri,
+  onPageSigleTab,
+  pdfHeight = Dimensions.get('window').height,
+  pdfWidth = Dimensions.get('window').width,
+  page,
+}: PdfViewerParams) {
+  const styles = useStyles({pdfHeight, pdfWidth});
   const [pageSize, setPageSize] = useState<IPageSize>({
     height: 0,
     width: 0,
@@ -40,22 +57,26 @@ export function PdfViewer({pdfUri, onPageSigleTab}: PdfViewerParams) {
           onPageSigleTab &&
           onPageSigleTab(page, pageSize.width, pageSize.height, x, y)
         }
+        page={page}
         style={styles.pdf}
+        singlePage={!!page}
       />
     </View>
   );
 }
 
-const {useStyles} = createStyles({
-  container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    marginTop: 25,
-  },
-  pdf: {
-    flex: 1,
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
-  },
-});
+const {useStyles} = createStyles<StyleOptions, ICreateStyle>(
+  (_, {pdfHeight, pdfWidth}) => ({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      // marginTop: 25,
+    },
+    pdf: {
+      flex: 1,
+      width: pdfWidth,
+      height: pdfHeight,
+    },
+  }),
+);

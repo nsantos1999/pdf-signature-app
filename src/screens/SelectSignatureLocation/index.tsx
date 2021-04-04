@@ -13,14 +13,14 @@ export function SelectSignatureLocation() {
   const navigation = useNavigation();
 
   const onPageSigleTab = useCallback(
-    (
+    async (
       pageNumber: number,
       pageWidth: number,
       pageHeight: number,
       x: number,
       y: number,
     ) => {
-      signPdf({
+      await signPdf({
         pageNumber,
         pageWidth,
         pageHeight,

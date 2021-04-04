@@ -3,7 +3,6 @@ import {useRepository} from '@hooks/useRepository';
 import {ISignedPdfSchema} from '@schemas/SignedPdfSchema';
 import {ToastUtil} from '@utils/ToastUtil';
 import {createContext, useCallback, useEffect, useState} from 'react';
-import {Typography} from '@components/Typography';
 
 type SignedPdfListProviderParams = {
   children: React.ReactNode;
@@ -11,6 +10,8 @@ type SignedPdfListProviderParams = {
 
 type ISignedPdfListContext = {
   signedPdfs: ISignedPdfSchema[];
+  isLoading: boolean;
+  handleLoadSignedPdfs: () => Promise<void>;
 };
 
 const SignedPdfListContext = createContext({} as ISignedPdfListContext);
@@ -26,7 +27,7 @@ function SignedPdfListProvider({children}: SignedPdfListProviderParams) {
     try {
       setIsLoading(true);
       const signedPdfsList = await signedPdfRepository.find();
-      console.log('SignedPdfList', signedPdfsList);
+
       setSignedPdfs(
         signedPdfsList.map(signedPdf => ({
           id: signedPdf.id,
@@ -43,7 +44,6 @@ function SignedPdfListProvider({children}: SignedPdfListProviderParams) {
         content: 'Não foi possivel carregar pdfs... Tente novamente',
       });
     } finally {
-      console.log('SignedPdfList', 'End Promise');
       setIsLoading(false);
     }
   }, [signedPdfRepository]);
@@ -57,8 +57,11 @@ function SignedPdfListProvider({children}: SignedPdfListProviderParams) {
     <SignedPdfListContext.Provider
       value={{
         signedPdfs,
+        isLoading,
+
+        handleLoadSignedPdfs,
       }}>
-      {isLoading ? <Typography>Loading...</Typography> : children}
+      {children}
     </SignedPdfListContext.Provider>
   );
 }

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {createStyles} from '@utils/createStyles';
-import {Image, View} from 'react-native';
+import {TouchableOpacity, View} from 'react-native';
 import {SignedPdfItemContent} from './Content';
 import {SignedPdfItemActions} from './Actions';
 import {ISignedPdfSchema} from '@schemas/SignedPdfSchema';
+import {PdfViewer} from '@components/PdfViewer';
+import {PdfViewerModal, PdfViewerModalRef} from './PdfModal';
 
 export type SignedPdfItemProps = {
   signedPdf: ISignedPdfSchema;
@@ -11,29 +13,35 @@ export type SignedPdfItemProps = {
 
 export function SignedPdfItem({signedPdf}: SignedPdfItemProps) {
   const styles = useStyles();
+  const modalRef = useRef<PdfViewerModalRef>(null);
 
   return (
-    <View style={styles.container}>
-      <View style={styles.imageContainer}>
-        <Image
-          source={{
-            uri:
-              'https://img.flaticon.com/icons/png/512/337/337946.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF',
-          }}
-          style={styles.image}
-          resizeMode="cover"
-        />
+    <>
+      <PdfViewerModal pdfUrl={signedPdf.url} ref={modalRef} />
+      <View style={styles.container}>
+        <TouchableOpacity
+          style={styles.imageContainer}
+          onPress={() => {
+            modalRef.current?.openModal();
+          }}>
+          <PdfViewer
+            pdfUri={signedPdf.url}
+            pdfHeight={100}
+            pdfWidth={80}
+            page={1}
+          />
+        </TouchableOpacity>
+        <View style={styles.infoContainer}>
+          <SignedPdfItemContent
+            name={signedPdf.title}
+            signedAt={signedPdf.signedAt}
+          />
+        </View>
+        <View style={styles.actionsContainer}>
+          <SignedPdfItemActions />
+        </View>
       </View>
-      <View style={styles.infoContainer}>
-        <SignedPdfItemContent
-          name={signedPdf.title}
-          signedAt={signedPdf.signedAt}
-        />
-      </View>
-      <View style={styles.actionsContainer}>
-        <SignedPdfItemActions />
-      </View>
-    </View>
+    </>
   );
 }
 
