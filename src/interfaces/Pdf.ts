@@ -1,4 +1,5 @@
 export type PdfSigned = {
+  id: string;
   path: string;
   name: string;
   signedAt: Date;

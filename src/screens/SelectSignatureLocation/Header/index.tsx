@@ -8,7 +8,12 @@ import {useNavigation} from '@react-navigation/core';
 const ICON_SIZE = 23;
 
 export function SelectSignatureLocationHeader() {
-  const {handleResetPdfSigned, pdfSignedUrl} = useSignPdf();
+  const {
+    handleResetPdfSigned,
+    handleConfirmSignature,
+    pdfSignedUrl,
+  } = useSignPdf();
+
   const styles = useStyles();
   const navigation = useNavigation();
 
@@ -38,7 +43,7 @@ export function SelectSignatureLocationHeader() {
               </TouchableOpacity>
               <TouchableOpacity
                 style={styles.iconButton}
-                onPress={() => console.log('Confirming signature...')}>
+                onPress={handleConfirmSignature}>
                 <Icon name="check" color="#fff" size={ICON_SIZE} />
               </TouchableOpacity>
             </>

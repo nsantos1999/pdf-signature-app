@@ -1,7 +1,12 @@
+import {useRepository} from '@hooks/useRepository';
 import {PdfLocalFile, SignatureLocation} from '@interfaces/Pdf';
+import {ISignedPdfSchema} from '@schemas/SignedPdfSchema';
 import {SignatureService} from '@services/SignatureService';
 import {ToastUtil} from '@utils/ToastUtil';
 import React, {createContext, useCallback, useContext, useState} from 'react';
+
+import 'react-native-get-random-values';
+import {v4 as uuidv4} from 'uuid';
 
 type SignPdfProviderParams = {
   children: React.ReactNode;
@@ -24,22 +29,21 @@ type ISignPdfContext = {
   signPdf: (signatureLocation: SignatureLocation) => void;
   setSignature: (signature: Signature) => void;
   handleResetPdfSigned: () => void;
+  handleConfirmSignature: () => void;
 };
 
 const SignPdfContext = createContext<ISignPdfContext>({} as ISignPdfContext);
 
 function SignPdfProvider({children}: SignPdfProviderParams) {
-  const [pdf, setPdf] = useState<PdfLocalFile>();
-  const [signature, setSignature] = useState<Signature>();
+  const [pdf, setPdf] = useState<PdfLocalFile>({} as PdfLocalFile);
+  const [signature, setSignature] = useState<Signature>({} as Signature);
   const [pdfSignedUrl, setPdfSignedUrl] = useState<string>('');
+
+  const signedPdfRepository = useRepository<ISignedPdfSchema>('SignedPdf');
 
   const handleResetPdfSigned = useCallback(() => {
     setPdfSignedUrl('');
   }, []);
-  // const [
-  //   signatureLocation,
-  //   setSignatureLocation,
-  // ] = useState<SignatureLocation>();
 
   const signPdf = useCallback(
     async (signatureLocation: SignatureLocation) => {
@@ -71,6 +75,29 @@ function SignPdfProvider({children}: SignPdfProviderParams) {
     [pdf, signature],
   );
 
+  const handleConfirmSignature = useCallback(async () => {
+    try {
+      await signedPdfRepository.create({
+        id: uuidv4(),
+        title: 'PDF Signed',
+        url: pdfSignedUrl,
+        pdfWithoutSignatureUrl: pdf.uri,
+        signedAt: new Date(),
+      });
+      ToastUtil.show({
+        title: 'Oba!',
+        content: 'Pdf assinado com sucesso!',
+      });
+    } catch (err) {
+      console.error(err);
+      ToastUtil.show({
+        type: 'error',
+        title: 'Eitaa!',
+        content: 'Algo deu errado',
+      });
+    }
+  }, [pdf, signedPdfRepository, pdfSignedUrl]);
+
   return (
     <SignPdfContext.Provider
       value={{
@@ -80,6 +107,7 @@ function SignPdfProvider({children}: SignPdfProviderParams) {
         signature,
         setPdf,
         signPdf,
+        handleConfirmSignature,
         // setSignatureLocation,
         setSignature,
         setPdfSignedUrl,

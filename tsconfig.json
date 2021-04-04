@@ -23,7 +23,10 @@
       "@utils/*": ["./utils/*"],
       "@mocks/*": ["./mocks/*"],
       "@styles/*": ["./styles/*"],
-      "@navigations/*": ["./navigations/*"]
+      "@navigations/*": ["./navigations/*"],
+      "@schemas/*": ["./schemas/*"],
+      "@infra/*": ["./infra/*"],
+      "@hooks/*": ["./hooks/*"]
     }
   },
   "exclude": [

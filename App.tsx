@@ -18,6 +18,8 @@ import {MainStack} from '@navigations/stack/MainStack';
 import {NavigationContainer} from '@react-navigation/native';
 import Toast from 'react-native-toast-message';
 import {defaultTheme} from '@constants/DefaultTheme';
+import {SignedPdfListProvider} from '@contexts/SignedPdfListContext';
+import {SignPdfProvider} from '@contexts/SignPdfContext';
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -30,10 +32,14 @@ const App: () => Node = () => {
 
   return (
     <ThemeProvider defaultTheme={defaultTheme}>
-      <NavigationContainer>
-        <MainStack />
-        <Toast ref={ref => Toast.setRef(ref)} />
-      </NavigationContainer>
+      <SignedPdfListProvider>
+        <SignPdfProvider>
+          <NavigationContainer>
+            <MainStack />
+            <Toast ref={ref => Toast.setRef(ref)} />
+          </NavigationContainer>
+        </SignPdfProvider>
+      </SignedPdfListProvider>
     </ThemeProvider>
   );
 };

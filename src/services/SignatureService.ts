@@ -3,6 +3,7 @@ import {ConverterUtils} from '@utils/ConverterUtill';
 import {PDFDocument} from 'pdf-lib';
 import {Dimensions, Platform} from 'react-native';
 import RNFS from 'react-native-fs';
+import 'react-native-get-random-values';
 import {v4 as uuidv4} from 'uuid';
 
 export class SignatureService {

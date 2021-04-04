@@ -1,15 +1,15 @@
 import React from 'react';
 import {createStyles} from '@utils/createStyles';
 import {Image, View} from 'react-native';
-import {PdfSigned} from '@interfaces/PdfSigned';
 import {SignedPdfItemContent} from './Content';
 import {SignedPdfItemActions} from './Actions';
+import {ISignedPdfSchema} from '@schemas/SignedPdfSchema';
 
 export type SignedPdfItemProps = {
-  pdfSigned: PdfSigned;
+  signedPdf: ISignedPdfSchema;
 };
 
-export function SignedPdfItem({pdfSigned}: SignedPdfItemProps) {
+export function SignedPdfItem({signedPdf}: SignedPdfItemProps) {
   const styles = useStyles();
 
   return (
@@ -26,8 +26,8 @@ export function SignedPdfItem({pdfSigned}: SignedPdfItemProps) {
       </View>
       <View style={styles.infoContainer}>
         <SignedPdfItemContent
-          name={pdfSigned.name}
-          signedAt={pdfSigned.signedAt}
+          name={signedPdf.title}
+          signedAt={signedPdf.signedAt}
         />
       </View>
       <View style={styles.actionsContainer}>
