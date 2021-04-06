@@ -7,6 +7,7 @@ import DocumentPicker from 'react-native-document-picker';
 import {useSignPdf} from '@contexts/SignPdfContext';
 import {ToastUtil} from '@utils/ToastUtil';
 import {useNavigation} from '@react-navigation/core';
+import {BouncedView} from '@components/Animated/BouncedView';
 
 export function SignPdfButton() {
   const styles = useStyles();
@@ -17,6 +18,9 @@ export function SignPdfButton() {
 
   const handleSelectDocument = useCallback(async () => {
     try {
+      // startAnimation();
+
+      // throw 'teste';
       const res = await DocumentPicker.pick({
         type: [DocumentPicker.types.pdf],
       });
@@ -43,11 +47,13 @@ export function SignPdfButton() {
   }, [navigation, setPdf]);
 
   return (
-    <TouchableOpacity
-      style={[styles.button, globalStyles.shadow1]}
-      onPress={handleSelectDocument}>
-      <Icon size={30} name="file-signature" color="#fff" />
-    </TouchableOpacity>
+    <BouncedView>
+      <TouchableOpacity
+        onPress={handleSelectDocument}
+        style={[styles.button, globalStyles.shadow1]}>
+        <Icon size={30} name="file-signature" color="#fff" />
+      </TouchableOpacity>
+    </BouncedView>
   );
 }
 

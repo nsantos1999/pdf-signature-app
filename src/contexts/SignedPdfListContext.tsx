@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import {useRepository} from '@hooks/useRepository';
 import {ISignedPdfSchema} from '@schemas/SignedPdfSchema';
 import {ToastUtil} from '@utils/ToastUtil';
-import {createContext, useCallback, useEffect, useState} from 'react';
+import {createContext, useCallback, useState} from 'react';
 
 type SignedPdfListProviderParams = {
   children: React.ReactNode;
@@ -12,6 +12,7 @@ type ISignedPdfListContext = {
   signedPdfs: ISignedPdfSchema[];
   isLoading: boolean;
   handleLoadSignedPdfs: () => Promise<void>;
+  addSignedPdf: (newSignedPdf: ISignedPdfSchema) => void;
 };
 
 const SignedPdfListContext = createContext({} as ISignedPdfListContext);
@@ -48,10 +49,17 @@ function SignedPdfListProvider({children}: SignedPdfListProviderParams) {
     }
   }, [signedPdfRepository]);
 
-  useEffect(() => {
-    handleLoadSignedPdfs();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const addSignedPdf = useCallback(
+    (newSignedPdf: ISignedPdfSchema) => {
+      setSignedPdfs([...signedPdfs, newSignedPdf]);
+    },
+    [signedPdfs],
+  );
+
+  // useEffect(() => {
+  //   handleLoadSignedPdfs();
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, []);
 
   return (
     <SignedPdfListContext.Provider
@@ -60,6 +68,7 @@ function SignedPdfListProvider({children}: SignedPdfListProviderParams) {
         isLoading,
 
         handleLoadSignedPdfs,
+        addSignedPdf,
       }}>
       {children}
     </SignedPdfListContext.Provider>

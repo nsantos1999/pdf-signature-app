@@ -1,3 +1,4 @@
+import {BouncedView, BouncedViewRef} from '@components/Animated/BouncedView';
 import {Button} from '@components/Button';
 import {useFocusEffect, useNavigation} from '@react-navigation/core';
 import {createStyles} from '@utils/createStyles';
@@ -22,6 +23,14 @@ export function SignatureCanvas({onSave}: SignatureCanvasProps) {
   const [isDragged, setIsDragged] = useState(false);
 
   const navigation = useNavigation();
+
+  const bouncedViewRef = useRef<BouncedViewRef>(null);
+
+  useEffect(() => {
+    if (isDragged) {
+      bouncedViewRef.current?.startAnimation();
+    }
+  }, [isDragged]);
 
   useFocusEffect(
     React.useCallback(() => {
@@ -56,9 +65,7 @@ export function SignatureCanvas({onSave}: SignatureCanvasProps) {
   }, [navigation]);
 
   const finishSignature = useCallback(() => {
-    console.log('Signature', 'Prepare to save...');
     if (signatureRef) {
-      console.log('Signature', 'Saving...');
       signatureRef?.current?.saveImage();
     }
   }, [signatureRef]);
@@ -88,14 +95,18 @@ export function SignatureCanvas({onSave}: SignatureCanvasProps) {
         viewMode={'landscape'}
       />
       <View style={styles.buttonGroups}>
-        <Button inverse onPress={resetSignature}>
-          Limpar
-        </Button>
-        <Button
-          disabled={!isDragged || !saveExtStorageIsGranted}
-          onPress={finishSignature}>
-          Salvar
-        </Button>
+        <BouncedView>
+          <Button inverse onPress={resetSignature}>
+            Limpar
+          </Button>
+        </BouncedView>
+        <BouncedView ref={bouncedViewRef}>
+          <Button
+            disabled={!isDragged || !saveExtStorageIsGranted}
+            onPress={finishSignature}>
+            Salvar
+          </Button>
+        </BouncedView>
       </View>
     </View>
   );

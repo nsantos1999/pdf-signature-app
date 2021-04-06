@@ -3,10 +3,17 @@ import {createStyles} from '@utils/createStyles';
 import {FlatList} from 'react-native';
 import {SignedPdfItem} from './SignedPdfItem';
 import {useSignedPdfList} from '@contexts/SignedPdfListContext';
+import {BouncedView} from '@components/Animated/BouncedView';
 
 export function SignedPdfList() {
   const styles = useStyles();
   const {signedPdfs, isLoading, handleLoadSignedPdfs} = useSignedPdfList();
+
+  // useFocusEffect(
+  //   React.useCallback(() => {
+  //     handleLoadSignedPdfs();
+  //   }, []),
+  // );
 
   return (
     // <ScrollView style={styles.container}>
@@ -14,7 +21,11 @@ export function SignedPdfList() {
       style={styles.container}
       data={signedPdfs}
       keyExtractor={item => item.id}
-      renderItem={({item}) => <SignedPdfItem signedPdf={item} key={item.id} />}
+      renderItem={({item}) => (
+        <BouncedView bounciness={10}>
+          <SignedPdfItem signedPdf={item} key={item.id} />
+        </BouncedView>
+      )}
       refreshing={isLoading}
       onRefresh={handleLoadSignedPdfs}
     />

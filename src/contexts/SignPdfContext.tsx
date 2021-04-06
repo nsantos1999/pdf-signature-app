@@ -77,13 +77,17 @@ function SignPdfProvider({children}: SignPdfProviderParams) {
 
   const handleConfirmSignature = useCallback(async () => {
     try {
-      await signedPdfRepository.create({
+      const newSignedPdf = {
         id: uuidv4(),
         title: 'PDF Signed',
         url: pdfSignedUrl,
         pdfWithoutSignatureUrl: pdf.uri,
         signedAt: new Date(),
-      });
+      };
+
+      await signedPdfRepository.create(newSignedPdf);
+      // addSignedPdf(newSignedPdf);
+
       ToastUtil.show({
         title: 'Oba!',
         content: 'Pdf assinado com sucesso!',

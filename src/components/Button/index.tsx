@@ -1,7 +1,8 @@
+import {BouncedView, BouncedViewRef} from '@components/Animated/BouncedView';
 import {Typography} from '@components/Typography';
 import {useGlobalStyles} from '@styles/useGlobalStyles';
 import {createStyles} from '@utils/createStyles';
-import React from 'react';
+import React, {useRef} from 'react';
 import {TouchableOpacity, TouchableOpacityProps, ViewStyle} from 'react-native';
 import {IColor, IThemePalette} from '../../interfaces/ITheme';
 
@@ -9,6 +10,7 @@ export type ButtonOptionsStyle = {
   pallete: keyof IThemePalette;
   color: keyof IColor;
   inverse: boolean;
+  disabled: boolean | undefined;
 };
 
 type StyleParams = {
@@ -26,15 +28,19 @@ export function Button({
   pallete = 'primary',
   color = 'main',
   inverse = false,
+  disabled,
   ...restProps
 }: CustomButtonProps) {
-  const styles = useStyles({pallete, color, inverse});
+  const styles = useStyles({pallete, color, inverse, disabled});
   const globalStyles = useGlobalStyles();
+  // const bouncedViewRef = useRef<BouncedViewRef>(null);
 
   return (
+    // <BouncedView ref={bouncedViewRef}>
     <TouchableOpacity
       {...restProps}
-      style={[styles.button, globalStyles.shadow1]}>
+      style={[styles.button, globalStyles.shadow1]}
+      disabled={disabled}>
       {typeof children === 'string' || typeof children === 'number' ? (
         <Typography isLight={!inverse} bold>
           {children}
@@ -43,14 +49,19 @@ export function Button({
         children
       )}
     </TouchableOpacity>
+    // </BouncedView>
   );
 }
 
 const {useStyles} = createStyles<ButtonOptionsStyle, StyleParams>(
-  (theme, {color, pallete, inverse}) => ({
+  (theme, {color, pallete, inverse, disabled}) => ({
     button: {
       borderRadius: 5,
-      backgroundColor: inverse ? '#fff' : theme.palette[pallete][color],
+      backgroundColor: inverse
+        ? '#fff'
+        : disabled
+        ? theme.palette[pallete][color] + '80'
+        : theme.palette[pallete][color],
       borderColor: inverse ? theme.palette[pallete][color] : '#000',
       borderWidth: inverse ? 1 : 0,
       // paddingVertical: 20,
